@@ -11,7 +11,7 @@ To create a Tailscale exit node, run the following commands:
 
 ```bash
 deno task bootstrap --profile profile
-deno task deploy --profile profile
+TAILSCALE_AUTH_KEY=your_key deno task deploy --profile profile
 ```
 
 To destroy the Tailscale exit node, run the following command:
