@@ -35,7 +35,6 @@ export class TailscaleExitnodesCdkStack extends cdk.Stack {
       subnetType: SubnetType.PUBLIC,
     });
 
-    // Get the latest ubuntu 22.04 machine image
     const machineImage = MachineImage.fromSsmParameter(
       "/aws/service/canonical/ubuntu/server/jammy/stable/current/amd64/hvm/ebs-gp2/ami-id"
     );
@@ -50,7 +49,7 @@ export class TailscaleExitnodesCdkStack extends cdk.Stack {
       `tailscale up --authkey ${props.tailscaleAuthKey} --advertise-exit-node --hostname=${props.exitNodeName}`
     );
 
-    const instance = new Instance(this, "exitNode", {
+    new Instance(this, "exitNode", {
       instanceType: new InstanceType("t2.micro"),
       vpc: vpc,
       instanceName: props.exitNodeName,
@@ -58,7 +57,5 @@ export class TailscaleExitnodesCdkStack extends cdk.Stack {
       machineImage: machineImage,
       userData: userData,
     });
-
-    console.log({ instance });
   }
 }
