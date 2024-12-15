@@ -1,0 +1,8 @@
+{
+  "lock": false,
+  "tasks": {
+    "bootstrap": "deno run -A npm:cdk bootstrap",
+    "deploy": "deno run -A npm:cdk deploy --all",
+    "destroy": "deno run -A npm:cdk destroy --all"
+  }
+}
