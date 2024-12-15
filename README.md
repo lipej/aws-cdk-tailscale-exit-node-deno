@@ -7,6 +7,8 @@ This repository automates the creation of a Tailscale exit node in your chosen A
 
 To create a Tailscale exit node, run the following commands:
 
+> This script will create a new Tailscale exit node in sa-east-1 to adjust and change the exit node name, change the stacks array in main.ts file.
+
 ```bash
 deno task bootstrap --profile profile
 deno task deploy --profile profile
